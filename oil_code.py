@@ -57,12 +57,12 @@ classifier.fit_generator(
 orb = cv2.ORB_create()
 bf = cv2.BFMatcher()
 training_image_location ='oilspill/testing/positive_samples'
-test_image = cv2.imread('C:/Users/Anchit Pandey/Desktop/IORTA/oilspill/testing/image1.jpg')
+test_image = cv2.imread('wave1.jpg')
 plus =0
 length_training_data = 1000
 kp1, des1 = orb.detectAndCompute(test_image,None)
 for i in range (1000):
-    image_train_compare = cv2.imread('C:/Users/Anchit Pandey/Desktop/IORTA/oilspill/training/image'+str(i+1)+'.jpg')
+    image_train_compare = cv2.imread('wave1.jpg')
     kp2,des2 = orb.detectAndCompute(image_train_compare,None)
     matches = bf.knnMatch(des1,des2,k=2)
     for m,n in matcches:
